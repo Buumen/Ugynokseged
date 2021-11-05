@@ -1,0 +1,129 @@
+<div class="body">
+
+<section class="kep">
+    <div class="wrapper">
+        <header>
+        <div class="logisztika" style="height: 300px;">
+        <div class="cim">
+            LOGISZTIKA
+        </div>
+        </div>
+        </header>
+    </div>	
+</section>
+
+<section class="lista">
+<div *ngIf="isDataAvailable">
+    <app-panel-loader></app-panel-loader>
+    <div class="container" *ngIf="userRole()">
+        <div class="container">
+            <div class="container">
+                <h3>Vevők adatai</h3>
+                <button (click)='createRoom()' class="btn btn-info">Új vevő létrehozása</button>
+            </div>
+            <div class="container">
+                <input class="form-control-searchbox" type="text" name="search" [(ngModel)]="searchText" autocomplete="on" 
+                placeholder="&#171; Keresés">
+                <table  class="table table-striped table-sm">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Vevőkód</th>
+                            <th>Funkció</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let room of rooms | filter:searchText">
+                            <td><strong>{{room.classroomNumber}}</strong></td>
+                            <td>    
+                                <button (click)="delete(room.id)" class="btn btn-danger">Törlés</button>                 
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+<section class="logiszt">
+
+	<div class="top">
+	<div class="content">
+		<nav>
+			<ul>
+					<li><b><a href="index.html">Főoldal</a></b></li>
+				<li><b><a href="logisztika.html">Logisztika</a></b></li>
+				<li><b><a href="statisztika.html">Statisztika</a></b></li>
+			</ul>
+		</nav>
+		<main>
+			<h1><span><center>Kereskedelmi egységek, túrák, infók</center></span></h1>
+			<div class="middle">
+			<h2><span>ÜKÖT01</span></h2>
+			<table>
+				<tr><th>Kereskedelmi egység</th><th>Cím</th><th>Túrakód</th><th>Autóvezető</th></tr>
+				<tr><th>Bolt 1</th><td>Település 1</td><td>Kód 1</td><td>Sofőr 1</td></tr>
+				<tr><th>Bolt 2</th><td>Település 2</td><td>Kód 2</td><td>Sofőr 2</td></tr>
+				<tr><th>Bolt 3</th><td>Település 3</td><td>Kód 3</td><td>Sofőr 3</td></tr>
+				<tr><th>Bolt 4</th><td>Település 4</td><td>Kód 4</td><td>Sofőr 4 </td></tr>
+			</table>
+			<br>
+			<h2><span>ÜKÖT02</span></h2>
+			<table>
+				<tr><th>Kereskedelmi egység</th><th>Cím</th><th>Túrakód</th><th>Autóvezető</th></tr>
+				<tr><th>Bolt 1</th><td>Település 1</td><td>Kód 1</td><td>Sofőr 1</td></tr>
+				<tr><th>Bolt 2</th><td>Település 2</td><td>Kód 2</td><td>Sofőr 2</td></tr>
+				<tr><th>Bolt 3</th><td>Település 3</td><td>Kód 3</td><td>Sofőr 3</td></tr>
+				<tr><th>Bolt 4</th><td>Település 4</td><td>Kód 4</td><td>Sofőr 4 </td></tr>
+			</table>
+			<br>
+			<h2><span>ÜKÖT03</span></h2>
+			<table>
+				<tr><th>Kereskedelmi egység</th><th>Cím</th><th>Túrakód</th><th>Autóvezető</th></tr>
+				<tr><th>Bolt 1</th><td>Település 1</td><td>Kód 1</td><td>Sofőr 1</td></tr>
+				<tr><th>Bolt 2</th><td>Település 2</td><td>Kód 2</td><td>Sofőr 2</td></tr>
+				<tr><th>Bolt 3</th><td>Település 3</td><td>Kód 3</td><td>Sofőr 3</td></tr>
+				<tr><th>Bolt 4</th><td>Település 4</td><td>Kód 4</td><td>Sofőr 4 </td></tr>
+			</table>
+			<br>
+			<h2><span>ÜKÖT04</span></h2>
+			<table>
+				<tr><th>Kereskedelmi egység</th><th>Cím</th><th>Túrakód</th><th>Autóvezető</th></tr>
+				<tr><th>Bolt 1</th><td>Település 1</td><td>Kód 1</td><td>Sofőr 1</td></tr>
+				<tr><th>Bolt 2</th><td>Település 2</td><td>Kód 2</td><td>Sofőr 2</td></tr>
+				<tr><th>Bolt 3</th><td>Település 3</td><td>Kód 3</td><td>Sofőr 3</td></tr>
+				<tr><th>Bolt 4</th><td>Település 4</td><td>Kód 4</td><td>Sofőr 4 </td></tr>
+			</table>
+			<br>
+			<h2><span>ÜKÖT05</span></h2>
+			<table>
+				<tr><th>Kereskedelmi egység</th><th>Cím</th><th>Túrakód</th><th>Autóvezető</th></tr>
+				<tr><th>Bolt 1</th><td>Település 1</td><td>Kód 1</td><td>Sofőr 1</td></tr>
+				<tr><th>Bolt 2</th><td>Település 2</td><td>Kód 2</td><td>Sofőr 2</td></tr>
+				<tr><th>Bolt 3</th><td>Település 3</td><td>Kód 3</td><td>Sofőr 3</td></tr>
+				<tr><th>Bolt 4</th><td>Település 4</td><td>Kód 4</td><td>Sofőr 4 </td></tr>
+			</table>
+			<br>
+			</div>
+		</main>
+		<nav>
+			<ul>
+				<li><b><a href="akciok.html">Akciók</a></b></li>
+				<li><b><a href="otletek.html">Ötletek</a></b></li>
+				<li><b><a href="kapcsolat.html">Kapcsolat</a></b></li>
+			</ul>
+		</nav>
+	</div>
+		<footer>
+		<div class="left">Copyright Sipos Csaba, 2021. © Minden jog fenntartva!
+		</div>
+		<div class="right">
+			<a href="https://users.iit.uni-miskolc.hu/~sipos13/index.html" target="_blank">Sipos Csaba oldala</a> |
+			<a href="https://www.mnb.hu" target="_blank">MNB árfolyam</a> |
+			<a href="https://www.parolkft.hu" target="_blank">PA-ROL Kft.</a>
+		</div>
+	</footer>
+</div>
+</section>
+</div>
